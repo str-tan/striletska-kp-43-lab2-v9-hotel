@@ -5,24 +5,16 @@ public class Visitor {
     private String fullName;
     private String email;
 
-    public Visitor() {}
-
-    public Visitor(String fullName, String email) {
-        this.fullName = fullName;
-        this.email = email;
-    }
-
-    public Visitor(Integer id, String fullName, String email) {
-        this.id = id;
-        this.fullName = fullName;
-        this.email = email;
-    }
-
     public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
     public String getFullName() { return fullName; }
     public String getEmail() { return email; }
 
-    public boolean isValidEmail() {
-        return email != null && email.contains("@") && email.contains(".");
+    public static class Builder {
+        private Visitor instance = new Visitor();
+        public Builder setId(int id) { instance.id = id; return this; }
+        public Builder setFullName(String name) { instance.fullName = name; return this; }
+        public Builder setEmail(String email) { instance.email = email; return this; }
+        public Visitor build() { return instance; }
     }
 }
