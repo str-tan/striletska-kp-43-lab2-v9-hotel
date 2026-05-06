@@ -1,4 +1,4 @@
-package ua.kpi.controller;
+package ua.kpi.controller.command;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
